@@ -9,22 +9,31 @@ char *extra[] = {";","*",",","(",")"};
 
 int main()
 {
+	// DATA TYPES USED: INTEGER,STRING and FRACTION	  		
+	
 	printf("\n");
 	char input[200];		//input stored in this array
 	gets(input);			
 	int l = strlen(input);
-	int x=10,i = 0,q=0;
+	int x=10,i = 0,q=0,j=0;
 	int shift = 0;
-	int keyword_len = 19;							////////////////////////////////////////////////////
-	int operators_len = 8;							//						  						  //	
+	int keyword_len = 19;							
+	int operators_len = 8;													  						  //	
 	int extra_len = 5;	
-	int count=0;							// DATA TYPES USED: INTEGER,STRING and FRACTION	  //		
-	do {											//					          					  //
-		//Skipping the spaces.						////////////////////////////////////////////////////
+	int count=0;
+	
+	for(j=0;j<l;j++)
+	{
+		if(input[j]>96 && input[j]<123)
+			input[j]-=32;
+	}
+	do {																          					  //
+		//Skipping the spaces.						
 		while(input[shift] == ' '){
 			shift = shift + 1;
 		}
 		//input being matched with every keyword (data types are also handled in the same loop
+		
 		for(i=0;i<keyword_len;i++){
 
 			while(input[shift] == ' ')
