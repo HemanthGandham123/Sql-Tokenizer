@@ -28,7 +28,8 @@ int main()
 			input[j]-=32;
 	}
 	do {																          					  //
-		//Skipping the spaces.						
+		//Skipping the spaces.	
+		START:
 		while(input[shift] == ' '){
 			shift = shift + 1;
 		}
@@ -55,6 +56,7 @@ int main()
 
 				shift = shift + strlen(pattern);
 				//break;
+				goto START;
 			}
 
 		}
@@ -76,6 +78,7 @@ int main()
 				printf("%s : operator\n\n",match);	//Once the match found we print the appropriate token and break to the next part of input
 				shift = shift + strlen(pattern);
 				//break;
+				goto START;
 			}
 
 		}
@@ -98,6 +101,7 @@ int main()
 				printf("%s : terminating/non terminating symbol\n\n",match);
 				shift = shift + strlen(pattern);
 				//break;
+				goto START;
 			}
 
 		}
